@@ -11,7 +11,8 @@ class App extends React.Component {
       }
     }
 
-    fetchPets = () => {
+    fetchPets = (event) => {
+        console.log(event) // you can also access the event with this because callbacks on events always pass the event as an argument unless told otherwise, but there is no use of the event 
         let petsURL = '/api/pets';
 
         if (this.state.filters.type !== 'all') {
@@ -25,7 +26,7 @@ class App extends React.Component {
 
     onChangeType = (event) => {
         this.setState({
-            filters: { type: event.target.value }
+            filters: { type: event.target.value } 
         }, () => console.log(this.state))
     }
 

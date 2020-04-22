@@ -7,6 +7,8 @@ class Filters extends React.Component {
         <h3>Animal type</h3>
         <div className="field">
           <select name="type" id="type" onChange={this.props.onChangeType}>
+          {/* when you need the event.target.value from an event, you should not use () => this.props.onChangeType() */}
+
             <option value="all">All</option>
             <option value="cat">Cats</option>
             <option value="dog">Dogs</option>
@@ -15,7 +17,9 @@ class Filters extends React.Component {
         </div>
 
         <div className="field">
-          <button onClick={() => this.props.onFindPetsClick()} 
+          <button onClick={this.props.onFindPetsClick}
+            // we are not recieving anything from the event and this is only a filter button, you can use () => this.props.onFindPetsClick() or this.props.onFindPetsClick
+
             className="ui secondary button">
               Find pets
           </button>

@@ -21,6 +21,7 @@ class Pet extends React.Component {
             {this.props.pet.isAdopted ? 
             (<button className="ui disabled button">Already adopted</button>) : 
             (<button onClick={() => this.props.onAdoptPet(this.props.pet.id)} className="ui primary button">Adopt pet</button>)}
+            {/* we need an argument of the pet's id from the event, must use "() =>" instead of just "this.props.onAdoptPet(this.props.pet.id)" so it is not invoked right away */}
         </div>
       </div>
     )
